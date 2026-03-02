@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { PiEnvelopeLight } from "react-icons/pi";
+import { useMutation } from "convex/react";
+import { api } from "@confam/backend";
 
 import { Button } from "@confam/ui";
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@confam/ui";
@@ -38,28 +40,44 @@ const WaitlistForm = ({
     register,
     handleSubmit,
     reset,
+    setError,
     formState: { errors },
   } = useForm<WaitlistFormData>({
     resolver: zodResolver(waitlistSchema),
   });
 
+  const joinWaitlist = useMutation(api.waitlist.join);
+
   const onSubmit = async (data: WaitlistFormData) => {
     setIsSubmitting(true);
 
     try {
-      // TODO: Replace with actual API call
-      console.log("Submitting email:", data.email);
-
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await joinWaitlist({ email: data.email });
 
       setIsSuccess(true);
       reset();
 
       // Reset success state after 3 seconds
       setTimeout(() => setIsSuccess(false), 3000);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error submitting form:", error);
+
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : "An unexpected error occurred.";
+
+      if (errorMessage.includes("already on the waitlist")) {
+        setError("email", {
+          type: "manual",
+          message: "This email is already part of our waitlist!",
+        });
+      } else {
+        setError("email", {
+          type: "manual",
+          message: "Could not join waitlist. Please try again later.",
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }

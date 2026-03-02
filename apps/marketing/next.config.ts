@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  transpilePackages: ["@confam/ui"],
+  transpilePackages: ["@confam/ui", "@confam/backend"],
 };
 
 export default nextConfig;

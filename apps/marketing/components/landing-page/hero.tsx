@@ -1,9 +1,17 @@
+"use client";
+
 import Image from "next/image";
+import { useQuery } from "convex/react";
+import { api } from "@confam/backend";
 
 import Container from "../global/container";
 import WaitlistForm from "./waitlist-form";
 
 const Hero = () => {
+  const pingMessage = useQuery(api.ping.ping);
+
+  console.log("Ping Message", pingMessage);
+
   return (
     <Container className="flex flex-col max-w-6xl md:items-center">
       {/* Main Headline */}
