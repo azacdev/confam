@@ -77,7 +77,7 @@ const Features = () => {
               key={index}
               className="bg-[#f6f5f4] rounded-xl p-6 text-center hover:shadow-md transition-shadow"
             >
-              <div className="text-4xl xl:text-5xl font-medium text-emerald-600 mb-1">
+              <div className="text-4xl xl:text-5xl font-medium text-indigo-600 mb-1">
                 {stat.value}
               </div>
               <div className="text-lg font-medium">{stat.label}</div>
@@ -98,10 +98,10 @@ const Features = () => {
           >
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-3">
-                <div className="p-2 bg-emerald-100 rounded-lg">
-                  <PiEyeSlashLight className="text-2xl text-emerald-600" />
+                <div className="p-2 bg-indigo-100 rounded-lg">
+                  <PiEyeSlashLight className="text-2xl text-indigo-600" />
                 </div>
-                <span className="text-xs font-medium text-emerald-600 bg-emerald-100 px-2 py-1 rounded-full">
+                <span className="text-xs font-medium text-indigo-600 bg-indigo-100 px-2 py-1 rounded-full">
                   Core Feature
                 </span>
               </div>
@@ -113,7 +113,7 @@ const Features = () => {
                 protected, so you can speak freely about salaries, workplace
                 culture, and career challenges.
               </p>
-              <div className="text-emerald-600 flex items-center hover:underline cursor-pointer text-sm font-medium">
+              <div className="text-indigo-600 flex items-center hover:underline cursor-pointer text-sm font-medium">
                 Learn more <PiArrowRight className="ml-2" />
               </div>
             </div>
@@ -129,12 +129,12 @@ const Features = () => {
           </div>
 
           {/* Side Stats Card */}
-          <div className="col-span-12 lg:col-span-4 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl p-6 xl:p-8 text-white flex flex-col justify-center">
+          <div className="col-span-12 lg:col-span-4 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl p-6 xl:p-8 text-white flex flex-col justify-center">
             <div className="flex items-center gap-3 mb-4">
               <PiShieldCheckLight className="text-4xl" />
               <span className="text-lg font-medium">Privacy First</span>
             </div>
-            <p className="text-emerald-100 text-sm mb-6">
+            <p className="text-indigo-100 text-sm mb-6">
               Your data is encrypted and your identity is never shared. We
               believe in complete transparency about compensation, not about who
               you are.
@@ -142,12 +142,12 @@ const Features = () => {
             <div className="flex items-center gap-4 text-sm">
               <div>
                 <div className="text-2xl font-bold">0</div>
-                <div className="text-emerald-200">Personal data stored</div>
+                <div className="text-indigo-200">Personal data stored</div>
               </div>
-              <div className="w-px h-10 bg-emerald-400"></div>
+              <div className="w-px h-10 bg-indigo-400"></div>
               <div>
                 <div className="text-2xl font-bold">256</div>
-                <div className="text-emerald-200">Bit encryption</div>
+                <div className="text-indigo-200">Bit encryption</div>
               </div>
             </div>
           </div>
@@ -278,7 +278,7 @@ const Features = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((step, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 text-2xl font-bold mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-100 text-indigo-600 text-2xl font-bold mb-4">
                   {step.number}
                 </div>
                 <h3 className="text-xl font-medium mb-2">{step.title}</h3>

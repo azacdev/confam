@@ -5,7 +5,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "convex:dev": "turbo run convex:dev"
+    "convex:dev": "turbo run convex:dev",
+    "convex:deploy": "turbo run convex:deploy"
   },
   "devDependencies": {
     "turbo": "latest"

@@ -21,8 +21,8 @@ const Incentive = () => {
           </p>
 
           {/* Early Access Badge */}
-          <div className="flex items-center gap-2 text-emerald-600 text-sm font-medium mb-8">
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <div className="flex items-center gap-2 text-indigo-600 text-sm font-medium mb-8">
+            <span className="inline-block w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
             Early access launching soon
           </div>
 
@@ -30,7 +30,7 @@ const Incentive = () => {
           <WaitlistForm />
 
           {/* Supporting Link */}
-          <div className="text-emerald-600 flex items-center hover:underline cursor-pointer text-sm font-medium mt-6">
+          <div className="text-indigo-600 flex items-center hover:underline cursor-pointer text-sm font-medium mt-6">
             Learn more about Confam <PiArrowRight className="ml-2 text-sm" />
           </div>
 

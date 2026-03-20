@@ -85,7 +85,7 @@ const WaitlistForm = ({
 
   if (isSuccess) {
     return (
-      <div className="flex items-center justify-center rounded-full bg-emerald-100 px-6 py-3 text-emerald-700">
+      <div className="flex items-center justify-center rounded-full bg-indigo-100 px-6 py-3 text-indigo-700">
         <span className="font-medium">🎉 You&apos;re on the list!</span>
       </div>
     );

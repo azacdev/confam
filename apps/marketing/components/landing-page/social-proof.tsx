@@ -11,7 +11,7 @@ import Container from "../global/container";
 // Community stats
 const communityStats = [
   {
-    icon: <PiUsersThreeFill className="text-2xl text-emerald-600" />,
+    icon: <PiUsersThreeFill className="text-2xl text-indigo-600" />,
     value: "10,000+",
     label: "On the Waitlist",
   },
@@ -63,7 +63,7 @@ const SocialProof = () => {
         {/* Featured Testimonial */}
         <div className="relative bg-white rounded-2xl p-8 xl:p-12 mb-8 border border-gray-100 shadow-sm">
           <div className="absolute top-6 left-8 xl:left-12">
-            <PiQuotesFill className="text-4xl text-emerald-200" />
+            <PiQuotesFill className="text-4xl text-indigo-200" />
           </div>
 
           <div className="flex flex-col md:flex-row items-center gap-8 pt-6">
@@ -72,8 +72,8 @@ const SocialProof = () => {
                 &quot;{testimonials[0].quote}&quot;
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
-                  <span className="text-emerald-600 font-bold text-sm">
+                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center">
+                  <span className="text-indigo-600 font-bold text-sm">
                     {testimonials[0].name.charAt(0)}
                   </span>
                 </div>
