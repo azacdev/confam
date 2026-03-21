@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { PiListBold, PiXBold } from "react-icons/pi";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import { Button } from "@confam/ui";
 
@@ -42,6 +43,15 @@ export const Notch = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const prevDimensions = useRef(dimensions);
+
+  const isResizing =
+    dimensions.width !== prevDimensions.current.width ||
+    dimensions.height !== prevDimensions.current.height;
+
+  useLayoutEffect(() => {
+    prevDimensions.current = dimensions;
+  }, [dimensions]);
 
   useEffect(() => {
     const updateDimensions = () => {
@@ -150,17 +160,29 @@ export const Notch = () => {
             viewBox={`0 0 ${w} ${h}`}
             preserveAspectRatio="none"
           >
-            <path
+            <motion.path
               d={frameFillPath}
               fillRule="evenodd"
-              className="fill-background transition-all duration-300"
+              initial={false}
+              animate={{ d: frameFillPath }}
+              transition={{
+                duration: isResizing ? 0 : 0.3,
+                ease: "easeInOut",
+              }}
+              className="fill-background"
             />
-            <path
+            <motion.path
               d={borderPath}
               fill="none"
               stroke="currentColor"
               strokeWidth="1"
-              className="text-zinc-300 dark:text-white/10 transition-all duration-300"
+              initial={false}
+              animate={{ d: borderPath }}
+              transition={{
+                duration: isResizing ? 0 : 0.3,
+                ease: "easeInOut",
+              }}
+              className="text-zinc-300 dark:text-white/10"
             />
           </svg>
         )}
