@@ -7,23 +7,24 @@ import {
 } from "react-icons/pi";
 
 import Container from "../global/container";
+import { FadeIn } from "../global/fade-in";
 
 // Community stats
 const communityStats = [
   {
     icon: <PiUsersThreeFill className="text-2xl text-indigo-600" />,
-    value: "10,000+",
-    label: "On the Waitlist",
+    value: "1,500+",
+    label: "Waitlist Members",
   },
   {
     icon: <PiGlobeFill className="text-2xl text-blue-600" />,
-    value: "50+",
-    label: "Industries Covered",
+    value: "35+",
+    label: "Companies Joined",
   },
   {
     icon: <PiShieldCheckFill className="text-2xl text-purple-600" />,
     value: "100%",
-    label: "Anonymous & Secure",
+    label: "Anonymity Guaranteed",
   },
 ];
 
@@ -31,16 +32,16 @@ const communityStats = [
 const testimonials = [
   {
     quote:
-      "I finally negotiated a fair salary because I could see what others in my role were earning across Lagos and Nairobi. Confam changed the game for me.",
+      "Salary negotiations in Lagos are practically a black box. GetConfam is the tool I've been waiting for to finally know my market value.",
     name: "Adaeze M.",
-    role: "Product Manager, Fintech",
+    role: "Product Manager (Waitlist Member)",
     image: "/assets/GroovySittingDoodle.svg",
   },
   {
     quote:
-      "Before Confam, I had no idea if my company's culture was normal or toxic. The anonymous reviews gave me the confidence to make a move.",
+      "Verified, anonymous reviews are the only way to get the real truth about our workspaces. This is long overdue for the African tech ecosystem.",
     name: "Kwame O.",
-    role: "Software Engineer, E-commerce",
+    role: "Software Engineer (Waitlist Member)",
     image: "/assets/SittingDoodle.svg",
   },
 ];
@@ -50,18 +51,21 @@ const SocialProof = () => {
     <section className="py-10 lg:py-20" id="social-proof">
       <Container className="max-w-6xl">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <FadeIn delay={0.1} className="text-center mb-16">
           <h2 className="text-3xl xl:text-5xl font-medium mb-4">
-            What Professionals Are Saying
+            The Movement for Transparency
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Hear from early access members who are already benefiting from
-            transparent career insights.
+            Professionals across Africa are joining the waitlist to solve the
+            information gap and level the playing field.
           </p>
-        </div>
+        </FadeIn>
 
         {/* Featured Testimonial */}
-        <div className="relative bg-white rounded-2xl p-8 xl:p-12 mb-8 border border-gray-100 shadow-sm">
+        <FadeIn
+          delay={0.2}
+          className="relative bg-white rounded-2xl p-8 xl:p-12 mb-8 border border-gray-100"
+        >
           <div className="absolute top-6 left-8 xl:left-12">
             <PiQuotesFill className="text-4xl text-indigo-200" />
           </div>
@@ -90,23 +94,24 @@ const SocialProof = () => {
             <div className="flex-shrink-0">
               <Image
                 src={testimonials[0].image}
-                alt="Professional"
+                alt="Waitlist Member"
                 width={200}
                 height={200}
                 className="w-40 xl:w-52"
               />
             </div>
           </div>
-        </div>
+        </FadeIn>
 
         {/* Stats + Second Testimonial Row */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 xl:gap-6">
           {/* Community Stats */}
           <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-4">
             {communityStats.map((stat, index) => (
-              <div
+              <FadeIn
                 key={index}
-                className="bg-white rounded-xl p-6 text-center border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+                delay={0.3 + index * 0.1}
+                className="bg-white rounded-xl p-6 text-center border border-gray-100"
               >
                 <div className="flex justify-center mb-3">{stat.icon}</div>
                 <div className="text-3xl xl:text-4xl font-medium mb-1">
@@ -115,12 +120,15 @@ const SocialProof = () => {
                 <div className="text-sm text-muted-foreground">
                   {stat.label}
                 </div>
-              </div>
+              </FadeIn>
             ))}
           </div>
 
           {/* Second Testimonial */}
-          <div className="lg:col-span-2 bg-white rounded-xl p-6 border border-gray-100 shadow-sm flex flex-col justify-between">
+          <FadeIn
+            delay={0.4}
+            className="lg:col-span-2 bg-white rounded-xl p-6 border border-gray-100 flex flex-col justify-between"
+          >
             <div>
               <PiQuotesFill className="text-2xl text-blue-200 mb-3" />
               <p className="text-sm text-foreground leading-relaxed italic mb-4">
@@ -142,7 +150,7 @@ const SocialProof = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </Container>
     </section>

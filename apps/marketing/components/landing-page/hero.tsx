@@ -6,6 +6,7 @@ import { api } from "@confam/backend";
 
 import Container from "../global/container";
 import WaitlistForm from "./waitlist-form";
+import { FadeIn } from "../global/fade-in";
 
 const Hero = () => {
   const pingMessage = useQuery(api.ping.ping);
@@ -15,25 +16,35 @@ const Hero = () => {
   return (
     <Container className="flex flex-col max-w-6xl md:items-center">
       {/* Main Headline */}
-      <h1 className="px-8 pt-6 text-center text-5xl font-medium xl:pt-14 xl:text-6xl">
-        Know Before You Go. <br className="hidden md:block" /> Every Company.
-        Every Role.
-      </h1>
+      <FadeIn delay={0.1}>
+        <h1 className="px-8 pt-6 text-center text-5xl font-medium xl:pt-14 xl:text-6xl">
+          Know Before You Go. <br className="hidden md:block" /> Every Company.
+          Every Role.
+        </h1>
+      </FadeIn>
 
       {/* Subheadline */}
-      <p className="mx-auto w-2/3 pt-4 text-center text-xl text-muted-foreground md:text-2xl">
-        Join thousands of professionals sharing salaries, company reviews, and{" "}
-        <br className="hidden md:block" />
-        career insights — completely anonymously.
-      </p>
+      <FadeIn delay={0.2}>
+        <p className="mx-auto w-full md:w-3/4 pt-4 text-center text-lg text-muted-foreground md:text-xl">
+          Join thousands of professionals in Nigeria, Kenya, and across the
+          continent sharing salaries, company reviews, and career insights —
+          completely anonymously.
+        </p>
+      </FadeIn>
 
       {/* Waitlist Form */}
-      <div className="flex items-center justify-center pt-8">
+      <FadeIn
+        delay={0.3}
+        className="flex items-center justify-center pt-8 w-full z-10"
+      >
         <WaitlistForm />
-      </div>
+      </FadeIn>
 
       {/* Hero Image */}
-      <div className="flex items-center justify-center pt-10 xl:pt-20">
+      <FadeIn
+        delay={0.4}
+        className="flex items-center justify-center pt-10 xl:pt-20"
+      >
         <Image
           src="/assets/ReadingSideDoodle.svg"
           alt="Professionals connecting anonymously"
@@ -41,7 +52,7 @@ const Hero = () => {
           height={1000}
           className="mx-auto w-60 xl:w-80"
         />
-      </div>
+      </FadeIn>
     </Container>
   );
 };

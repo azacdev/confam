@@ -1,24 +1,20 @@
-import Image from "next/image";
 import {
   PiFacebookLogoFill,
   PiInstagramLogoFill,
   PiTwitterLogoFill,
 } from "react-icons/pi";
+import { LogoIcon } from "../global/icons";
+import { FadeIn } from "../global/fade-in";
 
 const Footer = () => {
   return (
     <footer className="flex flex-col items-center gap-6 px-8 pb-10 pt-16">
-      {/* Logo */}
-      <Image
-        src="/bird-logo.png"
-        width={1025}
-        height={500}
-        alt="logo"
-        className="w-24"
-      />
+      <FadeIn delay={0.1}>
+        <LogoIcon className="w-12" />
+      </FadeIn>
 
       {/* Social Icons */}
-      <div className="flex gap-4">
+      <FadeIn delay={0.2} className="flex gap-4">
         <a
           href="#"
           className="text-gray-400 transition-colors hover:text-gray-600"
@@ -37,12 +33,14 @@ const Footer = () => {
         >
           <PiFacebookLogoFill className="text-2xl" />
         </a>
-      </div>
+      </FadeIn>
 
       {/* Copyright */}
-      <p className="text-sm text-gray-400">
-        © {new Date().getFullYear()} Confam. Coming soon.
-      </p>
+      <FadeIn delay={0.3}>
+        <p className="text-sm text-gray-400">
+          © {new Date().getFullYear()} Confam. Coming soon.
+        </p>
+      </FadeIn>
     </footer>
   );
 };

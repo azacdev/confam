@@ -9,7 +9,7 @@ import { Button } from "@confam/ui";
 // Constants
 const MARGIN = 6;
 const NOTCH_HEIGHT_COLLAPSED = 52;
-const NOTCH_HEIGHT_EXPANDED = 200;
+const NOTCH_HEIGHT_EXPANDED = 235;
 const CURVE_RADIUS = 20;
 const BORDER_RADIUS = 24;
 const SCROLL_THRESHOLD = 50;
@@ -75,12 +75,12 @@ export const Notch = () => {
     };
   }, []);
 
-  // Close menu on scroll
+  // Close menu when crossing scroll threshold down
   useEffect(() => {
-    if (isScrolled && isMenuOpen) {
+    if (isScrolled) {
       setIsMenuOpen(false);
     }
-  }, [isScrolled, isMenuOpen]);
+  }, [isScrolled]);
 
   const { width: w, height: h } = dimensions;
   const currentNotchHeight =
@@ -185,7 +185,7 @@ export const Notch = () => {
           <Link
             href="/"
             aria-label="home"
-            className="text-base font-bold tracking-tight text-zinc-900 sm:text-lg dark:text-white"
+            className="font-bold tracking-tight text-zinc-900 text-lg dark:text-white"
           >
             Confam
           </Link>
@@ -211,19 +211,18 @@ export const Notch = () => {
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
-                <PiXBold className="text-base" />
+                <PiXBold className="size-5.5" />
               ) : (
-                <PiListBold className="text-base" />
+                <PiListBold className="size-5.5" />
               )}
             </button>
 
             {/* CTA button */}
-            <Button className="px-3 py-1.5 text-sm sm:px-4 sm:py-2 sm:text-base">
-              <Link href="#get-started" className="flex items-center gap-1.5">
-                <span className="hidden sm:inline">Join Waitlist</span>
-                <span className="sm:hidden">Join</span>
-              </Link>
-            </Button>
+            <Link href="#get-started" className="flex items-center gap-1.5">
+              <Button className="hidden sm:block px-4 sm:text-base">
+                Join Waitlist
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -238,11 +237,17 @@ export const Notch = () => {
                 key={link.href}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
+                className="rounded-lg py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
               >
                 {link.label}
               </Link>
             ))}
+
+            <Link href="#get-started" className="flex items-center gap-1.5">
+              <Button className="px-4 sm:text-base w-full">
+                Join Waitlist
+              </Button>
+            </Link>
           </div>
         )}
       </nav>

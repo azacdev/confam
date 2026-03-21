@@ -48,6 +48,11 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);

@@ -14,6 +14,7 @@ import {
 } from "react-icons/pi";
 
 import Container from "../global/container";
+import { FadeIn } from "../global/fade-in";
 
 // Value proposition stats
 const stats = [
@@ -60,7 +61,7 @@ const Features = () => {
     <section className="py-10 lg:py-20" id="features">
       <Container className="max-w-6xl">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <FadeIn delay={0.1} className="text-center mb-16">
           <h2 className="text-3xl xl:text-5xl font-medium mb-4">
             Why Join Confam?
           </h2>
@@ -68,14 +69,15 @@ const Features = () => {
             Get access to the insights you need to make informed career
             decisions — all while staying completely anonymous.
           </p>
-        </div>
+        </FadeIn>
 
         {/* Stats Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-6 mb-12">
           {stats.map((stat, index) => (
-            <div
+            <FadeIn
               key={index}
-              className="bg-[#f6f5f4] rounded-xl p-6 text-center hover:shadow-md transition-shadow"
+              delay={0.1 + index * 0.1}
+              className="bg-[#f6f5f4] rounded-xl p-6 text-center"
             >
               <div className="text-4xl xl:text-5xl font-medium text-indigo-600 mb-1">
                 {stat.value}
@@ -84,15 +86,16 @@ const Features = () => {
               <div className="text-sm text-muted-foreground mt-1">
                 {stat.description}
               </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
 
         {/* Bento Grid Features */}
         <div className="grid grid-cols-12 gap-4 xl:gap-6">
           {/* Large Feature Card - Anonymous */}
-          <div
-            className="col-span-12 lg:col-span-8 bg-[#f6f5f4] rounded-xl p-6 xl:p-8 flex flex-col md:flex-row items-center gap-6 hover:shadow-md transition-shadow cursor-pointer"
+          <FadeIn
+            delay={0.2}
+            className="col-span-12 lg:col-span-8 bg-[#f6f5f4] rounded-xl p-6 xl:p-8 flex flex-col md:flex-row items-center gap-6 cursor-pointer"
             onMouseEnter={() => setHoveredFeature("anonymous")}
             onMouseLeave={() => setHoveredFeature(null)}
           >
@@ -126,10 +129,13 @@ const Features = () => {
                 className="w-48 xl:w-64"
               />
             </div>
-          </div>
+          </FadeIn>
 
           {/* Side Stats Card */}
-          <div className="col-span-12 lg:col-span-4 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl p-6 xl:p-8 text-white flex flex-col justify-center">
+          <FadeIn
+            delay={0.3}
+            className="col-span-12 lg:col-span-4 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl p-6 xl:p-8 text-white flex flex-col justify-center"
+          >
             <div className="flex items-center gap-3 mb-4">
               <PiShieldCheckLight className="text-4xl" />
               <span className="text-lg font-medium">Privacy First</span>
@@ -150,11 +156,12 @@ const Features = () => {
                 <div className="text-indigo-200">Bit encryption</div>
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Salary Insights Card */}
-          <div
-            className="col-span-12 md:col-span-6 bg-[#f6f5f4] rounded-xl p-6 hover:shadow-md transition-shadow cursor-pointer"
+          <FadeIn
+            delay={0.4}
+            className="col-span-12 md:col-span-6 bg-[#f6f5f4] rounded-xl p-6 cursor-pointer"
             onMouseEnter={() => setHoveredFeature("salaries")}
             onMouseLeave={() => setHoveredFeature(null)}
           >
@@ -180,11 +187,12 @@ const Features = () => {
             <div className="text-blue-600 flex items-center hover:underline cursor-pointer text-sm font-medium">
               View salary ranges <PiArrowRight className="ml-2" />
             </div>
-          </div>
+          </FadeIn>
 
           {/* Company Reviews Card */}
-          <div
-            className="col-span-12 md:col-span-6 bg-[#f6f5f4] rounded-xl p-6 hover:shadow-md transition-shadow cursor-pointer"
+          <FadeIn
+            delay={0.5}
+            className="col-span-12 md:col-span-6 bg-[#f6f5f4] rounded-xl p-6 cursor-pointer"
             onMouseEnter={() => setHoveredFeature("reviews")}
             onMouseLeave={() => setHoveredFeature(null)}
           >
@@ -210,10 +218,13 @@ const Features = () => {
             <div className="text-purple-600 flex items-center hover:underline cursor-pointer text-sm font-medium">
               Browse companies <PiArrowRight className="ml-2" />
             </div>
-          </div>
+          </FadeIn>
 
           {/* Career Growth Card */}
-          <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-[#f6f5f4] rounded-xl p-6 hover:shadow-md transition-shadow cursor-pointer">
+          <FadeIn
+            delay={0.6}
+            className="col-span-12 md:col-span-6 lg:col-span-4 bg-[#f6f5f4] rounded-xl p-6 cursor-pointer"
+          >
             <div className="flex items-center gap-2 mb-4">
               <div className="p-2 bg-orange-100 rounded-lg">
                 <PiRocketLaunchLight className="text-2xl text-orange-600" />
@@ -227,10 +238,13 @@ const Features = () => {
             <div className="text-orange-600 flex items-center hover:underline cursor-pointer text-sm font-medium mt-4">
               Get advice <PiArrowRight className="ml-2" />
             </div>
-          </div>
+          </FadeIn>
 
           {/* Community Card */}
-          <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-[#f6f5f4] rounded-xl p-6 hover:shadow-md transition-shadow cursor-pointer">
+          <FadeIn
+            delay={0.7}
+            className="col-span-12 md:col-span-6 lg:col-span-4 bg-[#f6f5f4] rounded-xl p-6 cursor-pointer"
+          >
             <div className="flex items-center gap-2 mb-4">
               <div className="p-2 bg-pink-100 rounded-lg">
                 <PiUsersThreeLight className="text-2xl text-pink-600" />
@@ -244,10 +258,13 @@ const Features = () => {
             <div className="text-pink-600 flex items-center hover:underline cursor-pointer text-sm font-medium mt-4">
               Join community <PiArrowRight className="ml-2" />
             </div>
-          </div>
+          </FadeIn>
 
           {/* Market Trends Card */}
-          <div className="col-span-12 lg:col-span-4 bg-[#f6f5f4] rounded-xl p-6 hover:shadow-md transition-shadow cursor-pointer">
+          <FadeIn
+            delay={0.8}
+            className="col-span-12 lg:col-span-4 bg-[#f6f5f4] rounded-xl p-6 cursor-pointer"
+          >
             <div className="flex items-center gap-2 mb-4">
               <div className="p-2 bg-cyan-100 rounded-lg">
                 <PiTrendUpLight className="text-2xl text-cyan-600" />
@@ -261,38 +278,7 @@ const Features = () => {
             <div className="text-cyan-600 flex items-center hover:underline cursor-pointer text-sm font-medium mt-4">
               View trends <PiArrowRight className="ml-2" />
             </div>
-          </div>
-        </div>
-
-        {/* How It Works Section */}
-        <div className="mt-20 xl:mt-32">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl xl:text-4xl font-medium mb-4">
-              How It Works
-            </h2>
-            <p className="text-muted-foreground">
-              Getting started is simple and takes less than a minute.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {steps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-100 text-indigo-600 text-2xl font-bold mb-4">
-                  {step.number}
-                </div>
-                <h3 className="text-xl font-medium mb-2">{step.title}</h3>
-                <p className="text-muted-foreground text-sm">
-                  {step.description}
-                </p>
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2">
-                    <PiArrowRight className="text-2xl text-gray-300" />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          </FadeIn>
         </div>
       </Container>
     </section>
