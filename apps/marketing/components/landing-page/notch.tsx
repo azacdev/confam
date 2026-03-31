@@ -241,9 +241,7 @@ export const Notch = () => {
 
             {/* CTA button */}
             <Link href="#get-started" className="flex items-center gap-1.5">
-              <Button className="hidden sm:block px-4 sm:text-base">
-                Join Waitlist
-              </Button>
+              <Button className="hidden sm:block px-4">Join Waitlist</Button>
             </Link>
           </div>
         </div>
