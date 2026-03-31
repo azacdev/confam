@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { PiArrowRight } from "react-icons/pi";
 
-import Container from "../global/container";
+import { Container } from "@confam/ui";
 import WaitlistForm from "./waitlist-form";
 import { FadeIn } from "../global/fade-in";
 

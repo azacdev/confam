@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useQuery } from "convex/react";
 import { api } from "@confam/backend";
 
-import Container from "../global/container";
+import { Container } from "@confam/ui";
 import WaitlistForm from "./waitlist-form";
 import { FadeIn } from "../global/fade-in";
 

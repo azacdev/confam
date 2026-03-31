@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@confam/ui";
-import Container from "@/components/global/container";
+import { Container } from "@confam/ui";
 import Footer from "@/components/landing-page/footer";
 import { Notch } from "@/components/landing-page/notch";
 
