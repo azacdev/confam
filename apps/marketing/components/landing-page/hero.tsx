@@ -7,6 +7,7 @@ import { api } from "@confam/backend";
 import { Container } from "@confam/ui";
 import WaitlistForm from "./waitlist-form";
 import { FadeIn } from "../global/fade-in";
+import { PiGithubLogoBold } from "react-icons/pi";
 
 const Hero = () => {
   const pingMessage = useQuery(api.ping.ping);
@@ -35,9 +36,19 @@ const Hero = () => {
       {/* Waitlist Form */}
       <FadeIn
         delay={0.3}
-        className="flex items-center justify-center pt-8 w-full z-10"
+        className="flex flex-col items-center justify-center pt-8 w-full z-10 gap-6"
       >
         <WaitlistForm />
+
+        <a
+          href="https://github.com/azacdev/confam"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <PiGithubLogoBold className="size-5" />
+          Proudly Open Source — Star us on GitHub
+        </a>
       </FadeIn>
 
       {/* Hero Image */}
