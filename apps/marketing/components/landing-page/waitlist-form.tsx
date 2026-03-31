@@ -1,16 +1,22 @@
 "use client";
 
+import { z } from "zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { PiEnvelopeLight } from "react-icons/pi";
-import { useMutation } from "convex/react";
-import { api } from "@confam/backend";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-import { Button } from "@confam/ui";
-import { InputGroup, InputGroupAddon, InputGroupInput } from "@confam/ui";
-import { Field, FieldError } from "@confam/ui";
+import { api } from "@confam/backend";
+import { useMutation } from "convex/react";
+
+import {
+  Button,
+  Field,
+  FieldError,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@confam/ui";
 
 // Zod schema for email validation
 const waitlistSchema = z.object({
@@ -109,15 +115,14 @@ const WaitlistForm = ({
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="h-9 px-4 text-sm font-medium md:h-10 md:px-5 md:text-base"
+            className="h-9 px-4 text-sm font-medium md:h-10 md:px-5 md:text-base shrink-0"
           >
-            {isSubmitting && "Joining..."}
-            {!isSubmitting && <>{buttonText}</>}
+            {isSubmitting ? "Joining..." : buttonText}
           </Button>
         </InputGroup>
 
         {errors.email && (
-          <FieldError className="mt-2 text-center">
+          <FieldError className="mt-2 text-center text-sm font-medium text-destructive">
             {errors.email.message}
           </FieldError>
         )}
