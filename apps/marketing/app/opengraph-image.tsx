@@ -4,7 +4,7 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 
 // Image metadata
-export const alt = "Confam - Experience & Salary Insights";
+export const alt = "Confam - Anonymous Salary & Career Insights";
 export const size = {
   width: 1200,
   height: 630,
@@ -57,7 +57,7 @@ export default async function Image() {
           lineHeight: 1.2,
         }}
       >
-        Invest and Save the Smart way with Affluence.
+        Know Before You Go. Every Company. Every Role.
       </div>
     </div>,
     {
